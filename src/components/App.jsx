@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import * as Scroll from 'react-scroll';
 import Searchbar from '../components/Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Loader from './Loader/Loader';
@@ -68,6 +69,9 @@ export function App() {
 
   const loadMore = () => {
     setPage(prevState => prevState + 1);
+    let scroll = Scroll.animateScroll;
+
+    scroll.scrollToBottom(pictures);
   };
 
   return (
